@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!doctype html>
 <html lang="ko">
 <head>
@@ -5,16 +6,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.min.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     <title>Django Girls blog</title>
 </head>
 <body>
-<div>
+<div class="page-header">
     <h1><a href="#">Django Girls Blog</a></h1>
     <h3>{{ title }}</h3>
 </div>
 {% for post in posts %}
 <hr>
-<div>
+<div class="post">
     <h2><a href="">{{ post.title }}</a></h2>
     <p>{{ post.text }}</p>
     <p>published: {{ post.published_date }}</p>
